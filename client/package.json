@@ -1,12 +1,14 @@
 {
-  "name": "my-v0-project",
+  "name": "Cultura",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "import:menu": "tsx scripts/importMenuItems.ts",
+    "test:sanity": "tsx scripts/testSanityConnection.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -68,6 +70,8 @@
     "@types/react-dom": "^19",
     "postcss": "^8.5",
     "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4",
     "typescript": "^5"
   }
 }

@@ -18,12 +18,12 @@ export interface NewsPost {
 }
 
 export interface MenuItem {
-  _id: string
-  name: string
-  description: string
-  price: number
-  category: string
-  isVegetarian?: boolean
-  isSpicy?: boolean
-  image?: string
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  isVegetarian?: boolean;
+  isSpicy?: boolean;
+  image?: string;
 }
