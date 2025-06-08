@@ -4,16 +4,18 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const query = `*[_type == "menuItem"]{
-      _id,
-      name,
-      description,
-      price,
-      category,
-      isSpicy,
-      isVegetarian,
-      "image": image.asset->url
-    }`;
+const query = `*[_type == "menuItem"]{
+  _id,
+  name,
+  description,
+  price,
+  category,
+  isSpicy,
+  isVegetarian,
+  image,
+  showImage,
+  showItem
+}`;
 
     const menuItems = await client.fetch(query);
     return NextResponse.json(menuItems);

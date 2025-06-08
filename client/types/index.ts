@@ -26,4 +26,6 @@ export interface MenuItem {
   isVegetarian?: boolean;
   isSpicy?: boolean;
   image?: string;
+  showImage?: boolean;
+  showItem?: boolean;
 }

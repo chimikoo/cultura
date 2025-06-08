@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Loader2 } from "lucide-react";
 import { MenuItem } from "@/types";
+import { urlFor } from "@/lib/sanity.image";
 
 export function Menu() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
@@ -35,6 +36,9 @@ export function Menu() {
     activeCategory === "all"
       ? menuItems
       : menuItems.filter((item) => item.category === activeCategory);
+
+  // ✅ Filter out items that should not be shown
+  const visibleItems = filteredItems.filter((item) => item.showItem !== false);
 
   if (loading) {
     return (
@@ -79,15 +83,16 @@ export function Menu() {
 
         {/* Menu Items */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item) => (
+          {visibleItems.map((item) => (
             <Card
               key={item._id}
               className="overflow-hidden hover:shadow-lg transition-shadow"
             >
-              {item.image && (
+              {/* ✅ Only show the image if showImage is true */}
+              {item.image && item.showImage && (
                 <div className="h-48 bg-stone-200">
                   <img
-                    src={item.image || "/placeholder.svg"}
+                    src={urlFor(item.image).url() || "/placeholder.svg"}
                     alt={item.name}
                     className="w-full h-full object-cover"
                     style={{ objectPosition: "center 35%" }}

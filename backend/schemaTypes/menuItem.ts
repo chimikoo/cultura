@@ -59,5 +59,21 @@ export const menuItem = defineType({
         hotspot: true,
       },
     }),
+    defineField({
+      name: "showImage",
+      title: "Show Image",
+      type: "boolean",
+      initialValue: true,
+      description:
+        "If disabled, the image will be hidden on the menu but remain in the database.",
+    }),
+    defineField({
+      name: "showItem",
+      title: "Show Item",
+      type: "boolean",
+      initialValue: true,
+      description:
+        "If disabled, the entire item will be hidden from the menu display but remain in the database.",
+    }),
   ],
 });
