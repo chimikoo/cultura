@@ -1,0 +1,161 @@
+const mockNewsPosts: NewsPost[] = [
+  {
+    _id: "1",
+    title: "Introducing Our New Seasonal Menu",
+    slug: { current: "new-seasonal-menu" },
+    excerpt:
+      "Discover our latest culinary creations featuring fresh, locally-sourced ingredients that celebrate the flavors of the season.",
+    content: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "We're thrilled to unveil our new seasonal menu, a carefully curated collection of dishes that celebrate the bounty of autumn. Our culinary team has spent months perfecting these recipes, working closely with local farmers and suppliers to source the finest ingredients.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "This season's highlights include our signature Butternut Squash Risotto, made with locally-grown squash and finished with truffle oil and aged parmesan. Our Braised Short Ribs, slow-cooked for 8 hours in red wine, practically fall off the bone and are served with roasted root vegetables.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "For dessert lovers, our Spiced Pear Tart with cinnamon ice cream captures the essence of fall in every bite. Each dish tells a story of tradition, innovation, and our commitment to sustainable, local sourcing.",
+          },
+        ],
+      },
+    ],
+    category: "menu-items",
+    publishedAt: "2024-01-15T10:00:00Z",
+    author: "Chef Maria Rodriguez",
+    featuredImage: "/placeholder.svg?height=400&width=600",
+  },
+  {
+    _id: "2",
+    title: "Wine Pairing Evening: A Journey Through Tuscany",
+    slug: { current: "wine-pairing-tuscany" },
+    excerpt:
+      "Join us for an exclusive wine pairing dinner featuring authentic Tuscan wines paired with our signature dishes.",
+    content: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Transport yourself to the rolling hills of Tuscany with our exclusive wine pairing dinner on February 14th. This intimate evening will feature five courses, each expertly paired with wines from renowned Tuscan vineyards.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Our sommelier will guide you through each pairing, sharing stories of the vineyards and the passionate winemakers behind each bottle. From a crisp Vernaccia di San Gimignano to a bold Brunello di Montalcino, each wine has been carefully selected to complement our chef's creations.",
+          },
+        ],
+      },
+    ],
+    category: "events",
+    publishedAt: "2024-01-12T14:30:00Z",
+    author: "Cultura Team",
+    featuredImage: "/placeholder.svg?height=400&width=600",
+  },
+  {
+    _id: "3",
+    title: "Behind the Scenes: Our Farm-to-Table Partnership",
+    slug: { current: "farm-to-table-partnership" },
+    excerpt:
+      "Learn about our commitment to sustainability and how we work directly with local farmers to bring you the freshest ingredients.",
+    content: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "At Cultura, our farm-to-table philosophy isn't just a trend—it's a commitment to our community, our environment, and the exceptional quality that defines every dish we serve.",
+          },
+        ],
+      },
+    ],
+    category: "community",
+    publishedAt: "2024-01-10T09:15:00Z",
+    author: "Sustainability Team",
+    featuredImage: "/placeholder.svg?height=400&width=600",
+  },
+  {
+    _id: "4",
+    title: "Chef's Corner: The Art of Perfect Pasta",
+    slug: { current: "art-of-perfect-pasta" },
+    excerpt:
+      "Our head chef shares the secrets behind creating the perfect pasta, from selecting the right flour to achieving the ideal texture.",
+    content: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Making perfect pasta is both an art and a science. It starts with selecting the right flour—we use a blend of semolina and tipo 00 flour for the ideal texture and flavor.",
+          },
+        ],
+      },
+    ],
+    category: "chefs-corner",
+    publishedAt: "2024-01-08T16:45:00Z",
+    author: "Chef Antonio Rossi",
+    featuredImage: "/placeholder.svg?height=400&width=600",
+  },
+  {
+    _id: "5",
+    title: "Cultura Wins Best Restaurant Award",
+    slug: { current: "best-restaurant-award" },
+    excerpt:
+      "We're thrilled to announce that Cultura has been recognized as the Best Restaurant in the city by Food & Wine Magazine.",
+    content: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "We are honored and humbled to receive the Best Restaurant Award from Food & Wine Magazine. This recognition is a testament to our entire team's dedication to culinary excellence.",
+          },
+        ],
+      },
+    ],
+    category: "restaurant-news",
+    publishedAt: "2024-01-05T11:20:00Z",
+    author: "Cultura Team",
+    featuredImage: "/placeholder.svg?height=400&width=600",
+  },
+  {
+    _id: "6",
+    title: "Cooking Classes: Learn from Our Master Chefs",
+    slug: { current: "cooking-classes-announcement" },
+    excerpt:
+      "New cooking classes are now available! Learn the techniques and secrets behind our most popular dishes in our interactive kitchen.",
+    content: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "We're excited to open our kitchen to food enthusiasts with our new cooking classes. Learn directly from our master chefs in hands-on sessions that cover everything from basic knife skills to advanced techniques.",
+          },
+        ],
+      },
+    ],
+    category: "events",
+    publishedAt: "2024-01-03T13:00:00Z",
+    author: "Education Team",
+    featuredImage: "/placeholder.svg?height=400&width=600",
+  },
+]
