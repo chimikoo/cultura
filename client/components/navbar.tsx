@@ -63,7 +63,7 @@ export function Navbar() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full h-4/6 sm:w-80 p-0 [&>button]:hidden">
+              <SheetContent side="right" className="w-full h-5/6 sm:w-80 p-0 [&>button]:hidden">
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <SheetDescription className="sr-only">Main navigation menu for mobile devices</SheetDescription>
                 <div className="flex flex-col h-full bg-white">
