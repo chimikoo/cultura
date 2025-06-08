@@ -1,11 +1,12 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet"
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -13,7 +14,13 @@ export function Navbar() {
     { name: "About", href: "#about" },
     { name: "Menu", href: "#menu" },
     { name: "Contact", href: "#contact" },
-  ];
+  ]
+
+  const handleNavClick = (href: string) => {
+    const target = document.getElementById(href.slice(1))
+    target?.scrollIntoView({ behavior: "smooth" })
+    setIsOpen(false) // Close mobile menu after navigation
+  }
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-stone-200 z-50">
@@ -29,10 +36,7 @@ export function Navbar() {
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => {
-                    const target = document.getElementById(item.href.slice(1));
-                    target?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                  onClick={() => handleNavClick(item.href)}
                   className="text-mocha-800 hover:text-burgundy-600 px-3 py-2 text-sm font-medium transition-colors"
                 >
                   {item.name}
@@ -43,59 +47,65 @@ export function Navbar() {
 
           <div className="hidden md:block">
             <Button
-              onClick={() => {
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={() => handleNavClick("#contact")}
               className="bg-burgundy-700 hover:bg-burgundy-800 text-white px-4 py-2 rounded"
             >
               Reserve Table
             </Button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu */}
           <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-full sm:w-80 p-0">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                <SheetDescription className="sr-only">Main navigation menu for mobile devices</SheetDescription>
+                <div className="flex flex-col h-full bg-white">
+                  {/* Header */}
+                  <div className="flex items-center justify-between p-6 border-b border-stone-200">
+                    <h2 className="text-xl font-bold text-burgundy-700">Cultura</h2>
+                    <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+                      <X className="h-6 w-6" />
+                      <span className="sr-only">Close menu</span>
+                    </Button>
+                  </div>
+
+                  {/* Navigation Items */}
+                  <div className="flex-1 py-6">
+                    <nav className="space-y-2 px-6">
+                      {navItems.map((item) => (
+                        <button
+                          key={item.name}
+                          onClick={() => handleNavClick(item.href)}
+                          className="w-full text-left px-4 py-4 text-lg font-medium text-mocha-800 hover:text-burgundy-600 hover:bg-stone-50 rounded-lg transition-colors"
+                        >
+                          {item.name}
+                        </button>
+                      ))}
+                    </nav>
+                  </div>
+
+                  {/* Reserve Button */}
+                  <div className="p-6 border-t border-stone-200">
+                    <Button
+                      onClick={() => handleNavClick("#contact")}
+                      className="w-full bg-burgundy-700 hover:bg-burgundy-800 text-white py-4 text-lg font-medium"
+                    >
+                      Reserve Table
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-stone-200">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => {
-                  const target = document.getElementById(item.href.slice(1)); // Remove '#' for id
-                  target?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="text-mocha-800 hover:text-burgundy-600 px-3 py-2 text-sm font-medium transition-colors"
-              >
-                {item.name}
-              </button>
-            ))}
-
-            <div className="px-3 py-2">
-              <Button className="w-full bg-burgundy-700 hover:bg-burgundy-800 text-white">
-                Reserve Table
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
     </nav>
-  );
+  )
 }
