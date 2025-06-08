@@ -1,4 +1,4 @@
-// API Integration Guide for Cultura Restaurant Website
+/* // API Integration Guide for Cultura Restaurant Website
 console.log("🔌 API Integration Setup Guide")
 console.log("===============================")
 console.log("")
@@ -88,3 +88,4 @@ console.log("")
 
 console.log("💡 The website is fully functional with mock data!")
 console.log("   Connect your Sanity Studio when ready.")
+ */

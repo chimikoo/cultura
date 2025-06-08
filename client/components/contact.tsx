@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Clock, Mail } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { MapPin, Phone, Clock, Mail } from "lucide-react";
 
 export function Contact() {
   return (
@@ -12,7 +12,8 @@ export function Contact() {
             Visit <span className="text-forest-200">Cultura</span>
           </h2>
           <p className="text-lg text-mocha-200 max-w-2xl mx-auto">
-            Ready to embark on a culinary journey? Reserve your table or get in touch with us.
+            Ready to embark on a culinary journey? Reserve your table or get in
+            touch with us.
           </p>
         </div>
 
@@ -67,58 +68,75 @@ export function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input
                   placeholder="First Name"
+                  required
                   className="bg-mocha-800 border-mocha-700 text-white placeholder:text-mocha-400"
                 />
                 <Input
                   placeholder="Last Name"
+                  required
                   className="bg-mocha-800 border-mocha-700 text-white placeholder:text-mocha-400"
                 />
               </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input
                   type="email"
                   placeholder="Email"
+                  required
                   className="bg-mocha-800 border-mocha-700 text-white placeholder:text-mocha-400"
                 />
                 <Input
                   type="tel"
                   placeholder="Phone"
+                  required
                   className="bg-mocha-800 border-mocha-700 text-white placeholder:text-mocha-400"
                 />
               </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Input
                   type="date"
-                  className="bg-mocha-800 border-mocha-700 text-white [&::-webkit-calendar-picker-indicator]:invert"
+                  required
+                  className="bg-mocha-800 border-mocha-700 text-mocha-400 placeholder:text-mocha-400 [&::-webkit-calendar-picker-indicator]:invert"
+                  style={{ color: "#ba9676" }}
                 />
                 <Input
                   type="time"
-                  className="bg-mocha-800 border-mocha-700 text-white [&::-webkit-calendar-picker-indicator]:invert"
+                  required
+                  className="bg-mocha-800 border-mocha-700 text-mocha-400 placeholder:text-mocha-400 [&::-webkit-calendar-picker-indicator]:invert"
+                  style={{ color: "#ba9676" }}
                 />
               </div>
+
               <Input
                 type="number"
                 placeholder="Number of Guests"
                 min="1"
                 max="20"
+                required
                 className="bg-mocha-800 border-mocha-700 text-white placeholder:text-mocha-400"
               />
+
               <Textarea
                 placeholder="Special requests or dietary restrictions..."
                 className="bg-mocha-800 border-mocha-700 text-white placeholder:text-mocha-400"
                 rows={4}
               />
-              <Button className="w-full bg-burgundy-700 hover:bg-burgundy-800 text-lg py-3">Reserve Table</Button>
+
+              <Button className="w-full bg-burgundy-700 hover:bg-burgundy-800 text-lg py-3">
+                Reserve Table
+              </Button>
             </form>
           </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-mocha-800 text-center">
           <p className="text-mocha-400">
-            © 2025 Cultura Restaurant. All rights reserved. | Crafted with passion for food culture.
+            © 2025 Cultura Restaurant. All rights reserved. | Crafted with
+            passion for food culture.
           </p>
         </div>
       </div>
     </section>
-  )
+  );
 }
