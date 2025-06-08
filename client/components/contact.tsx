@@ -115,7 +115,7 @@ export function Contact() {
 
         <div className="mt-16 pt-8 border-t border-mocha-800 text-center">
           <p className="text-mocha-400">
-            © 2024 Cultura Restaurant. All rights reserved. | Crafted with passion for food culture.
+            © 2025 Cultura Restaurant. All rights reserved. | Crafted with passion for food culture.
           </p>
         </div>
       </div>

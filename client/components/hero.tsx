@@ -1,10 +1,15 @@
-import { Button } from "@/components/ui/button"
-import { ArrowDown } from "lucide-react"
-import Image from "next/image"
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 export function Hero() {
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+    >
       <div className="absolute inset-0 z-0">
         <Image
           src="/hero_chef.png"
@@ -22,15 +27,27 @@ export function Hero() {
           <span className="text-forest-200 block">Culture</span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-mocha-100 max-w-2xl mx-auto">
-          Where authentic flavors meet modern culinary artistry. Experience a journey through global food culture.
+          Where authentic flavors meet modern culinary artistry. Experience a
+          journey through global food culture.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-burgundy-700 hover:bg-burgundy-800 text-lg px-8 py-3">
+          <Button
+            size="lg"
+            className="bg-burgundy-700 hover:bg-burgundy-800 text-lg px-8 py-3"
+            onClick={() => {
+              const menuSection = document.getElementById("menu");
+              menuSection?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             Explore Menu
           </Button>
           <Button
             size="lg"
             className="text-white bg-[rgb(66,111,92)] hover:bg-white hover:text-stone-900 text-lg px-8 py-3"
+            onClick={() => {
+              const aboutSection = document.getElementById("about");
+              aboutSection?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Our Story
           </Button>
@@ -41,5 +58,5 @@ export function Hero() {
         <ArrowDown className="h-6 w-6 text-white" />
       </div>
     </section>
-  )
+  );
 }
